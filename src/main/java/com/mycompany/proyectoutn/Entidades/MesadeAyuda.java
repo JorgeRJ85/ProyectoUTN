@@ -6,7 +6,8 @@
 package com.mycompany.proyectoutn.Entidades;
 
 import java.time.LocalDate;
-
+import lombok.Getter;
+import lombok.Setter;
 /**
  *
  * @author ilux

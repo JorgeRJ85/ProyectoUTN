@@ -6,7 +6,8 @@
 package com.mycompany.proyectoutn.Entidades;
 
 import java.util.List;
-
+import lombok.Getter;
+import lombok.Setter;
 
 
 
