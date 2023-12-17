@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.proyectoutn.Entidades;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import lombok.Getter;
@@ -12,32 +13,38 @@ import lombok.Setter;
  *
  * @author ilux
  */
-public class MesadeAyuda {
-    private int idIncidente;
-    public  AreaComercial areaCom;
-    private String problema;
-    private LocalDate inicioT;
-    private LocalDate inicioF;
 
+@Entity
+@Table(name="MesadeAyuda")
+public class MesadeAyuda {
+    @Id
+    @Column(name="idIncidente")
+    @GeneratedValue (strategy=GenerationType.IDENTITY)
+    private int idIncidente;
+    //////******invocaciones
+    @ManyToOne
+    @JoinColumn(name = "idCliente")
+    public  AreaComercial areaCom;
+    
+    @ManyToOne
+    @JoinColumn(name = "idTecnico")
+    public Tecnico tecnico;
+    /////************** 
+    @Column(name="problema")
+    private String problema;
+    @Column(name="inicioT")
+    private LocalDate inicioT;
+    
+    @Column(name="inicioF")
+    private LocalDate inicioF;
+    @Column (name = "estado")
+    private boolean estado;
+    
+    
     public MesadeAyuda() {
     }
 
-    public MesadeAyuda(AreaComercial areaCom, String problema, LocalDate inicioT, LocalDate inicioF) {
-        this.areaCom = areaCom;
-        this.problema = problema;
-        this.inicioT = inicioT;
-        this.inicioF = inicioF;
-    }
 
-    public MesadeAyuda(int idIncidente, AreaComercial areaCom, String problema, LocalDate inicioT, LocalDate inicioF) {
-        this.idIncidente = idIncidente;
-        this.areaCom = areaCom;
-        this.problema = problema;
-        this.inicioT = inicioT;
-        this.inicioF = inicioF;
-    }
-    
-    
     
     
 }

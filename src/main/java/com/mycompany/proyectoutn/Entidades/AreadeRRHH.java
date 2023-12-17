@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.proyectoutn.Entidades;
-import lombok.Getter;
-import lombok.Setter;
+
 /**
  *
  * @author ilux
